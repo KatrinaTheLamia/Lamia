@@ -1,0 +1,22 @@
+
+NIMH Labs, Lamia Browser
+
+Lamia is a text based browser, based on certain bits of the Hacked Links 
+browser.
+
+Lamia is designed to be light weight and excessively extendable. Mostly just 
+using the Hacked Links code that allows for rendering to ncurses, framebuffer 
+and X11. Also the code to handle network connectivity and various encodings.
+
+Lamia will contain the ability to disable and enable various mechanisms for 
+use in the browser while it is running. If a resource is taking up too much 
+CPU power, a signal can be sent to disable it. Possibly from another terminal.
+This is to say, the goal of Lamia is to be highly modular.
+
+Lamia will work on a Client/Server model. The actual work for Lamia will be 
+at the Lamia server. A Lamia client will be able to ask for the current 
+rendered version of a page, or modify what page is being accessed. Lamia 
+will _not_ do anything involving window decorations, or any of the actual 
+X11 information.
+
+Lamia will allow for a Client for framebuffer and ncurses however.
