@@ -25,12 +25,11 @@ typedef struct {
 	lamia_list eggs;
 } lamia_ouroboros;
 
-lamia_ouroboros pid(lamia_ouroboros*);
-lamia_ouroboros configuration(lamia_ouroboros*, lamia_config*=nil);
-lamia_ouroboros interpretors(lamia_ouroboros*, lamia_interpretors*=nil);
-lamia_ouroboros eggs(lamia_ouroboros*, index);
-
-lamia_ouroboros render();
+lamia_ouroboros oroboros(lamia_ouroboros*=nil);
+lamia_ouroboros *pid(lamia_ouroboros*);
+lamia_ouroboros *configuration(lamia_ouroboros*, lamia_config*=nil);
+lamia_ouroboros *interpretors(lamia_ouroboros*, lamia_interpretors*=nil);
+lamia_ouroboros *eggs(lamia_ouroboros*, index);
 
 void store_state(lamia_ouroboros*);
 void restore_state(lamia_ouroboros*);
