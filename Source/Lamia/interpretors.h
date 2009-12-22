@@ -19,12 +19,7 @@
 
 enum lamia_vm_type { lamia_dom, lamia_parrot, lamia_mono, lamia_jvm };
 
-typedef struct {
-    lamia_id name;
-    lamia_interpretor interpretor;
-    void *next;
-    void *prev;
-} lamia_interpretors;
+typedef lamia_list lamia_interpretors;
 
 typedef struct {
     lamia_vm_type type;

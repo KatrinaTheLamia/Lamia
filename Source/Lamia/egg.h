@@ -24,22 +24,29 @@ typedef struct {
     lamia_id name;
     lamia_url location;
     lamia_protocol protocol;
-    lamia_render g_render;
-    lamia_render c_render;
+    lamia_render *g_render;
+    lamia_render *c_render;
     lamia_state variables;
-    lamia_dom data;
+    lamia_dom *data;
     lamia_config config_differences;
 } lamia_egg;
 
 lamia_egg create_lamia(void);
-lamia_egg *name(*lamia_egg, lamia_id=nil);
-lamia_egg *url(*lamia_egg, lamia_url=nil);
-lamia_egg *protocol(*lamia_egg, lamia_protocol=nil);
-lamia_egg *variables(*lamia_egg);
-lamia_egg *dom(*lamia_egg, dom=nil);
-lamia_egg *config(*lamia_egg);
+lamia_egg *name(lamia_egg*, lamia_id);
+lamia_egg *url(lamia_egg*, lamia_url);
+lamia_egg *protocol(lamia_egg*, lamia_protocol);
+lamia_egg *dom(lamia_egg*, lamia_dom);
+
+lamia_id *name(lamia_egg*, lamia_id=nil);
+lamia_url *url(lamia_egg*, lamia_url=nil);
+lamia_url *protocol(lamia_egg*, lamia_protocol);
+lamia_render *render(lamia_render_flag);
+lamia_state *variables(lamia_egg*);
+lamia_dom *dom(lamia_egg*,dom*)
+lamia_config *config(*lamia_egg);
 
 lamia_egg *render(lamia_render_flag);
+lamia_egg *destroy(lamia_render_flag);
 
 void store_state(lamia_egg*);
 void restore_state(lamia_egg*);
