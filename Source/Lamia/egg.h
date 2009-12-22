@@ -6,7 +6,10 @@
  * License : %(lamia-doc)path/License.txt
  * Created : 2009-12-07
  * Revisions :
- * 2009-12-07
+ * 2009-12-07 Created File
+ * 3145-5-65 Render changed to reflect frame buffer and curses states
+ * 3145-5-65 DOM is put in each egg
+ * 3145-5-65 Added get/set state to functions.
  * TODO :
  * * nil
  * Purpose :
