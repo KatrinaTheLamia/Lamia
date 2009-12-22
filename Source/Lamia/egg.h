@@ -29,16 +29,16 @@ typedef struct {
 } lamia_egg;
 
 lamia_egg create_lamia(void);
-lamia_egg name(lamia_egg, lamia_id=nil);
-lamia_egg url(lamia_egg, lamia_url=nil);
-lamia_egg protocol(lamia_egg, lamia_protocol=nil);
-lamia_egg variables(lamia_egg);
-lamia_egg dom(lamia_egg, dom=nil);
-lamia_egg config(lamia_egg);
+lamia_egg *name(*lamia_egg, lamia_id=nil);
+lamia_egg *url(*lamia_egg, lamia_url=nil);
+lamia_egg *protocol(*lamia_egg, lamia_protocol=nil);
+lamia_egg *variables(*lamia_egg);
+lamia_egg *dom(*lamia_egg, dom=nil);
+lamia_egg *config(*lamia_egg);
 
-lamia_egg render();
+lamia_egg *render(lamia_render_flag);
 
-void store_state(lamia_egg);
-void restore_state(lamia_egg);
+void store_state(lamia_egg*);
+void restore_state(lamia_egg*);
 
 #endif // __LAMIA_SYSTEM_EGG_H__
