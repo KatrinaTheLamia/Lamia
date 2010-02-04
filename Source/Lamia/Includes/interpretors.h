@@ -9,8 +9,10 @@
  * + 3175-5-65 Created File
  * ~ 3176-1-35 Worked it to use libNIMH... cleaned up stuff by quite 
  * bit.
+ * - 3176-1-35 BTW... we are now placing common elements into lamia_object
+ * + 3176-1-35 and now, we have a lamia object placed into here.
  * TODO :
- * * Finish Writing
+ * * Finish Writing <more or less done>
  * * Debug
  * Purpose :
  * Create a system that allows us to have multiple interpretors set up.
@@ -24,7 +26,7 @@
 typedef nimh_data lamia_interpretors;
 
 typedef struct {
-    lamia_id type;
+    lamia_object *base;
     void *virtual_machine;
     void *byte_code_info;
 } lamia_interpretor_data lamia_interpretor;
