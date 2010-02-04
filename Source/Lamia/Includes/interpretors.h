@@ -13,6 +13,7 @@
  * + 3176-1-35 and now, we have a lamia object placed into here.
  * TODO :
  * * Finish Writing <more or less done>
+ * * Document ERIS DAMMIT!
  * * Debug
  * Purpose :
  * Create a system that allows us to have multiple interpretors set up.
