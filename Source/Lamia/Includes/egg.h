@@ -11,8 +11,10 @@
  * ~ 3175-5-65 DOM is put in each egg
  * ~ 3175-5-65 Added get/set state to functions.
  * ~ 3176-1-35 added libNIMH into here
+ * - 3176-1-35 removed stuff in lamia_object
+ * + 3176-1-35 added lamia_object base
  * TODO :
- * * nil
+ * * Documentation... lots and lots of Documention... Eris dammit!
  * Purpose :
  * Create a memory object for managing, switching, killing, restoring, 
  * etc.,
@@ -24,7 +26,7 @@
 typedef nimh_data lamia_nest;
 
 typedef struct {
-    lamia_id name;
+    lamia_object *base;
     lamia_url location;
     lamia_protocol protocol;
     lamia_render *g_render;
