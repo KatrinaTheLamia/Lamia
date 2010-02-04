@@ -6,7 +6,9 @@
  * License : %(Lamia-doc)path/License.txt
  * Created : 3145-5-64
  * Revisions :
- * 3145-5-65 Created File
+ * + 3175-5-65 Created File
+ * ~ 3176-1-35 Worked it to use libNIMH... cleaned up stuff by quite 
+ * bit.
  * TODO :
  * * Finish Writing
  * * Debug
@@ -14,36 +16,30 @@
  * Create a system that allows us to have multiple interpretors set up.
  */
 
+#include <libNIMH/NIMH.h>
+
 #ifndef __LAMIA_SYSTEM_INTERPRETORS_H__
 #define __LAMIA_SYSTEM_INTERPRETORS_H__
 
-enum lamia_vm_type { lamia_dom, lamia_parrot, lamia_mono, lamia_jvm };
-
-typedef lamia_list lamia_interpretors;
+typedef nimh_data lamia_interpretors;
 
 typedef struct {
-    lamia_vm_type type;
+    lamia_id type;
     void *virtual_machine;
     void *byte_code_info;
-} lamia_interpretor;
+} lamia_interpretor_data lamia_interpretor;
 
-lamia_interpretors symbol_table_gen(lamia_interpretors*=nil);
-lamia_interpretors* add_symbol(lamia_interpretors*, lamia_interpretor*);
-lamia_interpretor lamia_interpretor(lamia_interpretor*);
-lamia_interpretor lamia_interpretor(lamia_vm_type);
+lamia_interpretors symbol_table_gen(nimh_book*);
+lamia_interpretors add_symbol(nimh_book*,lamia_symbol*);
 
-/* Not a good idea btw... maybe in the future however. */
-/* lamia_interpretor index(lamia_interpretors*, lamia_index); */
-lamia_interpretor* name(lamia_interpreetors*, lamia_id);
+lamia_interpretor lamia_interpretor(nimh_book*,nimh_string*,lamia_interpretor*=nil);
 
-lamia_vm_type type(lamia_interpretor*);
+lamia_vm_type type(nimh_book*,nimh_string*);
 
-void* virtual_machine(lamia_interpretor*, void*=nil);
-lamia_interpretor* byte_code_info(lamia_interpetor*,void*);
+void* virtual_machine(nimh_book*,nimh_string*, void*=nil);
+lamia_interpretor* byte_code_info(nimh_book,nimh_string*);
 
-void store_state(lamia_interpretors*);
-void store_state(lamia_interpretor*);
-void restore_state(lamia_interpretors*);
-void restore_state(lamia_interpretor*);
+void store_state(nimh_book*,nimh_string*=nil);
+void restore_state(nimh_book*,nimh_string*=nil);
 
 #endif // __LAMIA_SYSTEM_INTERPRETORS_H__
