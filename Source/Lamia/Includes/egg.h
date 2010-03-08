@@ -34,7 +34,7 @@ typedef struct {
     lamia_state variables;
     lamia_dom *data;
     lamia_config config_differences;
-} lamia_egg;
+} lamia_egg_data lamia_egg;
 
 lamia_egg create_lamia(nimh_book*,nimh_string*);
 lamia_egg *name(nimh_book*,nimh_string*, lamia_id);
